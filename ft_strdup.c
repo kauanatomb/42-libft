@@ -1,40 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcat.c                                       :+:      :+:    :+:   */
+/*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ktombola <ktombola@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/23 21:34:38 by ktombola          #+#    #+#             */
-/*   Updated: 2025/04/23 21:45:46 by ktombola         ###   ########.fr       */
+/*   Created: 2025/04/25 10:23:55 by ktombola          #+#    #+#             */
+/*   Updated: 2025/04/25 11:03:58 by ktombola         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
 
-size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
-{
-	size_t	i;
-	size_t	src_len;
-	size_t	dest_len;
+static char	*ft_strcpy(char *dest, const char *src);
 
-	src_len = 0;
-	dest_len = 0;
+char	*ft_strdup(const char *s1)
+{
+	char	*dest;
+
+	if (!s1)
+		return (NULL);
+	dest = malloc(ft_strlen(s1) + 1);
+	if (!dest)
+		return (NULL);
+	return (ft_strcpy(dest, s1));
+}
+
+static char	*ft_strcpy(char *dest, const char *src)
+{
+	int	i;
+
 	i = 0;
-	while (dest_len < dstsize && dst[dest_len])
+	while (src[i])
 	{
-		dest_len++;
-	}
-	while (src[src_len])
-	{
-		src_len++;
-	}
-	if (dstsize <= dest_len)
-		return (dstsize + src_len);
-	while (src[i] && (dest_len + i) < (dstsize - 1))
-	{
-		dst[dest_len + i] = src[i];
+		dest[i] = src[i];
 		i++;
 	}
-	dst[dest_len + i] = '\0';
-	return (dest_len + src_len);
+	dest[i] = '\0';
+	return (dest);
 }

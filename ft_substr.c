@@ -1,40 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcat.c                                       :+:      :+:    :+:   */
+/*   ft_substr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ktombola <ktombola@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/23 21:34:38 by ktombola          #+#    #+#             */
-/*   Updated: 2025/04/23 21:45:46 by ktombola         ###   ########.fr       */
+/*   Created: 2025/04/25 11:39:56 by ktombola          #+#    #+#             */
+/*   Updated: 2025/04/25 12:47:07 by ktombola         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
 
-size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
+char	*ft_substr(const char *s, unsigned int start, size_t len)
 {
-	size_t	i;
-	size_t	src_len;
-	size_t	dest_len;
+	char			*str;
+	unsigned int	i;
 
-	src_len = 0;
-	dest_len = 0;
 	i = 0;
-	while (dest_len < dstsize && dst[dest_len])
+	if (!s)
+		return (NULL);
+	if (start > ft_strlen(s))
+		return (ft_strdup(""));
+	if (len > ft_strlen(s + start))
+		len = ft_strlen(s + start);
+	str = ft_calloc(len + 1, sizeof(char));
+	if (!str)
+		return (NULL);
+	while (len > i)
 	{
-		dest_len++;
-	}
-	while (src[src_len])
-	{
-		src_len++;
-	}
-	if (dstsize <= dest_len)
-		return (dstsize + src_len);
-	while (src[i] && (dest_len + i) < (dstsize - 1))
-	{
-		dst[dest_len + i] = src[i];
+		str[i] = s[start + i];
 		i++;
 	}
-	dst[dest_len + i] = '\0';
-	return (dest_len + src_len);
+	str[i] = '\0';
+	return (str);
 }
