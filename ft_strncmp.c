@@ -11,6 +11,22 @@
 /* ************************************************************************** */
 #include "libft.h"
 
+/**
+ * @brief Compares two strings up to n characters.
+ * 
+ * The function compares the first n characters of the strings s1 and s2.
+ * It returns an integer less than, equal to, or greater than zero if s1 is
+ * found, respectively, to be less than, to match, or be greater than s2.
+ * 
+ * @param s1 The first string to compare.
+ * @param s2 The second string to compare.
+ * @param n The maximum number of characters to compare.
+ * @return int
+ * @retval 0 if the strings are equal up to n characters.
+ * @retval A positive value if s1 is greater than s2.
+ * @retval A negative value if s1 is less than s2.
+ */
+
 int	ft_strncmp(const char *s1, const char *s2, size_t n)
 {
 	size_t	i;
@@ -24,16 +40,3 @@ int	ft_strncmp(const char *s1, const char *s2, size_t n)
 		return (0);
 	return ((unsigned char)s1[i] - (unsigned char)s2[i]);
 }
-/*
-#include <stdio.h>
-#include <string.h>
-
-int	main(void)
-{
-	char s1[] = "Kauana";
-	char s2[] = "Kauana1";
-
-	printf("%d\n and %d\n", ft_strncmp(s1, s2, 7), strncmp(s1, s2, 7));
-	return (0);
-}
-*/

@@ -11,6 +11,15 @@
 /* ************************************************************************** */
 #include "libft.h"
 
+/**
+ * @brief Locates the last occurrence of c in the string pointed to by s.
+ * @param s The string to search.
+ * @param c The character to locate.
+ * @return char*
+ * @retval A pointer to the last occurrence of c in s
+ * @retval pointer to the last occurence of c in string s.
+*/
+
 char	*ft_strrchr(const char *s, int c)
 {
 	const char	*p;
@@ -26,14 +35,3 @@ char	*ft_strrchr(const char *s, int c)
 		return ((char *)s);
 	return ((char *)p);
 }
-/*
-#include <stdio.h>
-
-int	main(void)
-{
-	char s[] = "kauanak";
-	int c = '\0';
-	printf("%s", ft_strrchr(s, c));
-	return (0);
-}
-*/

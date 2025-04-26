@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcy.c                                        :+:      :+:    :+:   */
+/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ktombola <ktombola@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -11,6 +11,14 @@
 /* ************************************************************************** */
 #include "libft.h"
 
+/**
+ * @brief Copies up to dstsize - 1 characters from the string src to dst,
+ *        null-terminating the result if dstsize is not 0.
+ * @param dst The destination string.
+ * @param src The source string.
+ * @param dstsize The size of the destination buffer.
+ * @return size_t The length of the source string.
+ */
 size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
 {
 	size_t	i;
