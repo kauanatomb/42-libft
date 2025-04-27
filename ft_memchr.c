@@ -11,6 +11,18 @@
 /* ************************************************************************** */
 #include "libft.h"
 
+/**
+ * @brief Scans the first 'n' bytes of the memory area pointed to by 's'
+ * for the first occurrence of the byte 'c'.
+ * 
+ * @param s The memory area to search.
+ * @param c The byte to look for.
+ * @param n The number of bytes to examine.
+ * 
+ * @return A pointer to the matching byte, or NULL if the byte is not found
+ * within the first 'n' bytes.
+ */
+
 void	*ft_memchr(const void *s, int c, size_t n)
 {
 	unsigned char	*str;
@@ -27,15 +39,3 @@ void	*ft_memchr(const void *s, int c, size_t n)
 	}
 	return (0);
 }
-/*
-#include <stdio.h>
-#include <string.h>
-
-int	main(void)
-{
-	unsigned char arr[] = {0x10, 0x20, 0x30, 0x40, 0x50};
-	void *res1 = ft_memchr(arr, 0x30, 3);
-	void *res2 = memchr(arr, 0x30, 3);
-	printf("FT: %p | LIBC: %p\n", res1, res2);
-}
-*/

@@ -11,6 +11,13 @@
 /* ************************************************************************** */
 #include "libft.h"
 
+/**
+ * @brief Allocates (with malloc) and returns a copy of the string 's1'.
+ * @param s1 The string to duplicate.
+ * @retval NULL If 's1' is NULL or if the memory allocation fails.
+ * @return A pointer to the newly allocated copy of the string.
+ */
+
 static char	*ft_strcpy(char *dest, const char *src);
 
 char	*ft_strdup(const char *s1)

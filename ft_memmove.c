@@ -11,6 +11,18 @@
 /* ************************************************************************** */
 #include "libft.h"
 
+/**
+ * @brief Copies 'len' bytes from memory area 'src' to memory area 'dst'.
+ * The memory areas may overlap; the copy is always done in a safe way.
+ * 
+ * @param dst The destination buffer.
+ * @param src The source buffer.
+ * @param len The number of bytes to copy.
+ * 
+ * @retval NULL If both 'dst' and 'src' are NULL.
+ * @return A pointer to the destination buffer 'dst'.
+ */
+
 void	*ft_memmove(void *dst, const void *src, size_t len)
 {
 	unsigned char	*b_dst;

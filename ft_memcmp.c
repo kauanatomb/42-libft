@@ -6,10 +6,21 @@
 /*   By: ktombola <ktombola@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/24 11:23:02 by ktombola          #+#    #+#             */
-/*   Updated: 2025/04/24 12:11:08 by ktombola         ###   ########.fr       */
+/*   Updated: 2025/04/27 12:09:42 by ktombola         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
+
+/**
+ * @brief Compares the first 'n' bytes of the memory areas 's1' and 's2'.
+ * 
+ * @param s1 The first memory area.
+ * @param s2 The second memory area.
+ * @param n The number of bytes to compare.
+ * 
+ * @return An integer less than, equal to, or greater than zero if 's1' is found,
+ * respectively, to be less than, to match, or be greater than 's2'.
+ */
 
 int	ft_memcmp(const void *s1, const void *s2, size_t n)
 {
@@ -28,23 +39,3 @@ int	ft_memcmp(const void *s1, const void *s2, size_t n)
 		return (0);
 	return (p1[i] - p2[i]);
 }
-/*
-#include <stdio.h>
-
-int main(void)
-{
-    unsigned char a[] = {0x10, 0x20, 0x30, 0x40, 0x50};
-    unsigned char b[] = {0x10, 0x20, 0x30, 0x41, 0x50};
-    unsigned char c[] = {0x10, 0x20, 0x30, 0x40, 0x50};
-    unsigned char d[] = {0x10, 0x20, 0x30, 0x40, 0x00};
-    unsigned char e[] = {0x10, 0x20, 0x30, 0x40, 0x51};
-
-    printf("Test 1 (a vs b, 5): %d\n", ft_memcmp(a, b, 5)); // neg (0x40 < 0x41)
-    printf("Test 2 (a vs c, 5): %d\n", ft_memcmp(a, c, 5)); // 0
-    printf("Test 3 (a vs d, 5): %d\n", ft_memcmp(a, d, 5)); // pos (0x50 > 0x00)
-    printf("Test 4 (a vs e, 4): %d\n", ft_memcmp(a, e, 4)); // 0
-    printf("Test 5 (a vs e, 5): %d\n", ft_memcmp(a, e, 5)); // neg (0x50 < 0x51)
-
-    return 0;
-}
-*/

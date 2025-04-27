@@ -11,6 +11,16 @@
 /* ************************************************************************** */
 #include "libft.h"
 
+/**
+ * @brief Allocates memory for an array of `count` elements, each of size `size`,
+ * and initializes all bytes to zero.
+ * 
+ * @param count The number of elements to allocate.
+ * @param size The size of each element.
+ * 
+ * @return A pointer to the allocated memory, or NULL if the allocation fails.
+ */
+
 void	*ft_calloc(size_t count, size_t size)
 {
 	unsigned char	*tmp;
@@ -24,32 +34,3 @@ void	*ft_calloc(size_t count, size_t size)
 		tmp[i++] = 0;
 	return (tmp);
 }
-/*
-#include <stdio.h>
-int	main(void)
-{
-	size_t count = 5;
-	size_t size = sizeof(int);
-
-	int *arr1 = (int *)ft_calloc(count, size);
-	int *arr2 = (int *)calloc(count, size);
-
-	if (arr1 == NULL || arr2 == NULL)
-	{
-		printf("Error in memory allocation \n");
-		return (1);
-	}
-	if (memcmp(arr1, arr2, count * size) == 0)
-	{
-		printf("Memory inicialization done correctly");
-	}
-	else
-	{
-		printf("Differences in results");
-	}
-
-	free(arr1);
-	free(arr2);
-	return (0);
-}
-*/
