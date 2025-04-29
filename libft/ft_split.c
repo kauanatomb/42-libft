@@ -6,7 +6,7 @@
 /*   By: ktombola <ktombola@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/28 08:48:45 by ktombola          #+#    #+#             */
-/*   Updated: 2025/04/28 10:15:14 by ktombola         ###   ########.fr       */
+/*   Updated: 2025/04/29 11:47:26 by ktombola         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
@@ -86,7 +86,7 @@ static char	**ft_free(char **strs, int count)
 static char	*fill_word(const char *start, size_t len)
 {
 	char	*word;
-	size_t		i;
+	size_t	i;
 
 	i = 0;
 	word = malloc((len + 1) * sizeof(char));
