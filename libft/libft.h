@@ -6,7 +6,7 @@
 /*   By: ktombola <ktombola@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/24 11:09:19 by ktombola          #+#    #+#             */
-/*   Updated: 2025/04/27 12:21:42 by ktombola         ###   ########.fr       */
+/*   Updated: 2025/04/29 17:17:06 by ktombola         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,4 +52,11 @@ char	*ft_strnstr(const char *haystack, const char *needle, size_t len);
 char	*ft_strtrim(const char *s1, const char *set);
 char	*ft_strmapi(const char *s, char (*f)(unsigned int, char));
 char	**ft_split(const char *s, char c);
+
+// Bonus
+typedef struct s_list
+{
+	void			*content;
+	struct s_list	*next;
+}	t_list;
 #endif
