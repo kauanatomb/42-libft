@@ -1,37 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putendl_fd.c                                    :+:      :+:    :+:   */
+/*   ft_lstdelone_bonus.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ktombola <ktombola@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/29 12:43:23 by ktombola          #+#    #+#             */
-/*   Updated: 2025/04/29 13:14:18 by ktombola         ###   ########.fr       */
+/*   Created: 2025/04/30 12:25:24 by ktombola          #+#    #+#             */
+/*   Updated: 2025/04/30 12:31:52 by ktombola         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
 #include "libft.h"
 
 /**
- * @brief Writes a string to the specified file descriptor, 
- * followed by a newline.
+ * @brief Deletes and frees a single list node.
  *
- * Outputs the string `s` to the file descriptor `fd`, followed by 
- * a newline character (`\n`).
- * If `s` is NULL, the function does nothing.
+ * The function applies the provided 'del' function to the node's content,
+ * and then frees the memory of the node itself.
+ * The memory of the 'next' node is not affected.
  *
- * @param s The string to write.
- * @param fd The file descriptor to write to.
+ * @param lst The node to delete.
+ * @param del A function to delete the content of the node.
  */
 
-void	ft_putendl_fd(char *s, int fd)
+void	ft_lstdelone(t_list *lst, void (*del)(void *))
 {
-	if (!s)
-		return ;
-	while (*s)
-	{
-		write(fd, s, 1);
-		s++;
-	}
-	write(fd, "\n", 1);
+	del(lst->content);
+	free(lst);
 }

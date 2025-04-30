@@ -6,7 +6,7 @@
 /*   By: ktombola <ktombola@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/25 09:47:56 by ktombola          #+#    #+#             */
-/*   Updated: 2025/04/25 10:20:46 by ktombola         ###   ########.fr       */
+/*   Updated: 2025/04/30 18:14:53 by ktombola         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
@@ -23,14 +23,18 @@
 
 void	*ft_calloc(size_t count, size_t size)
 {
-	unsigned char	*tmp;
-	size_t			i;
+	char	*tmp;
+	size_t	total_size;
+	size_t	i;
 
+	if (size != 0 && count > SIZE_MAX / size)
+		return (NULL);
 	i = 0;
-	tmp = malloc(count * size);
+	total_size = count * size;
+	tmp = malloc(total_size);
 	if (!tmp)
 		return (NULL);
-	while (i < count * size)
+	while (i < total_size)
 		tmp[i++] = 0;
 	return (tmp);
 }

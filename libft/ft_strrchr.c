@@ -23,15 +23,19 @@
 char	*ft_strrchr(const char *s, int c)
 {
 	const char	*p;
+	char		uc;
 
+	uc = (char)c;
+	if (!s)
+		return (0);
 	p = 0;
 	while (*s)
 	{
-		if (*s == c)
+		if (*s == uc)
 			p = s;
 		s++;
 	}
-	if (*s == c)
+	if (*s == uc)
 		return ((char *)s);
 	return ((char *)p);
 }

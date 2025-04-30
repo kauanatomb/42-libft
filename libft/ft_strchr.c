@@ -24,15 +24,20 @@
 
 char	*ft_strchr(const char *s, int c)
 {
+	char	uc;
+
+	uc = (char)c;
+	if (!s)
+		return (0);
 	while (*s)
 	{
-		if (*s == c)
+		if (*s == uc)
 		{
 			return ((char *)s);
 		}
 		s++;
 	}
-	if (c == *s)
+	if (uc == *s)
 		return ((char *)s);
 	return (0);
 }

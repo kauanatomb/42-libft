@@ -1,37 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putendl_fd.c                                    :+:      :+:    :+:   */
+/*   ft_lstsize_bonus.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ktombola <ktombola@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/29 12:43:23 by ktombola          #+#    #+#             */
-/*   Updated: 2025/04/29 13:14:18 by ktombola         ###   ########.fr       */
+/*   Created: 2025/04/30 10:17:46 by ktombola          #+#    #+#             */
+/*   Updated: 2025/04/30 10:54:13 by ktombola         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
 #include "libft.h"
 
 /**
- * @brief Writes a string to the specified file descriptor, 
- * followed by a newline.
+ * @brief Counts the number of nodes in a linked list.
  *
- * Outputs the string `s` to the file descriptor `fd`, followed by 
- * a newline character (`\n`).
- * If `s` is NULL, the function does nothing.
+ * Iterates through the list starting from the node 'lst',
+ * and returns the total number of nodes it contains.
  *
- * @param s The string to write.
- * @param fd The file descriptor to write to.
+ * @param lst A pointer to the first node of the list.
+ *
+ * @return The number of nodes in the list.
  */
 
-void	ft_putendl_fd(char *s, int fd)
+int	ft_lstsize(t_list *lst)
 {
-	if (!s)
-		return ;
-	while (*s)
+	t_list	*tmp;
+	int		i;
+
+	i = 0;
+	tmp = lst;
+	while (tmp != NULL)
 	{
-		write(fd, s, 1);
-		s++;
+		tmp = tmp->next;
+		i++;
 	}
-	write(fd, "\n", 1);
+	return (i);
 }

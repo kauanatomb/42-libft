@@ -24,7 +24,7 @@ void test_with_null_character() {
   const char *str = "Hello, world!";
   int c = '\0';
   char *result = ft_strrchr(str, c);
-  printf("Expected: %p, Got: %p\n", (str + 13), result); // test ton see what it got
+  printf("Expected: %p, Got: %p\n", (str + 13), result); // test to see what it got
   assert(result == str + 13); 
 }
 
