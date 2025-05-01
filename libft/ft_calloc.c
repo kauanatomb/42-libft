@@ -26,15 +26,15 @@ void	*ft_calloc(size_t count, size_t size)
 	char	*tmp;
 	size_t	total_size;
 
-	if (count == 0 || size == 0)
-		total_size = 0;
-	else if (count > SIZE_MAX / size)
+	if (count && size && count > INT_MAX / size)
 		return (NULL);
-	else
-		total_size = count * size;
+	total_size = count * size;
+	if (total_size == 0)
+		total_size = 1;
 	tmp = malloc(total_size);
 	if (!tmp)
 		return (NULL);
-	ft_memset(tmp, 0, total_size);
+	while (total_size--)
+		tmp[total_size] = 0;
 	return (tmp);
 }
